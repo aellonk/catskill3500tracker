@@ -13,6 +13,17 @@ class UserController < ApplicationController
 	    end
   	end
 
+  	post '/signup' do
+	  	if params[:firstname] == "" || params[:lastname] == "" || params[:email] == "" || params[:username] == "" ||  params[:password] == ""
+	      redirect to '/signup'
+	    else
+	    	@user = User.new(:firstname => params[:firstname], :lastname => params[:lastname], :email => params[:email], :username => params[:username], :password => params[:password])
+		    @user.save
+		    session[:user_id] = @user.id
+		    redirect to '/peaks'
+	    end
+  	end
+
   	get '/login' do
 		if !logged_in?
 	      erb :'users/login'
