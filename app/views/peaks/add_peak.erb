@@ -1,14 +1,12 @@
 <h1>Add a Peak</h1>
 <form action="/peaks" method="post">
 	<label>Peak Name</label>
-	<select name="peak_id">
-	    <%= @peaks.each do |peak| %>
-	      <option value="<%= peak.id %>"><%= peak.name %></option>
-	    <% end %>
-  	</select>
-    <br>
-	<label>Elevation (in feet):</label>
+	<input id='name' type='text' name='name' required><br>
+	<label>Elevation (in feet)</label>
+	<input id='elevation' type='text' name='elevation' required><br>
 	<label>Date Hiked</label>
+	<input id='date_hiked' type='text' name='date_hiked' required><br>
 	<label>Remarks: </label>
+	<input id='remarks' type='text' name='remarks'><br>
 	<input class="btn btn-primary" type='submit' value='submit'>
 </form>
