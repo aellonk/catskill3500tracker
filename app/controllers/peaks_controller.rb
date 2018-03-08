@@ -3,7 +3,7 @@ class PeakController < ApplicationController
 	get '/peaks' do
 		if logged_in?
 	      @peaks = Peak.all
-	      erb :'peaks/peaks'
+	      erb :'peaks/all_peaks'
 	    else
 	      redirect to '/login'
 	    end

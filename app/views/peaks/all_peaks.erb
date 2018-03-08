@@ -1,4 +1,9 @@
 <h1>All Peaks</h1>
 <% @peaks.each do |peak| %>
-  <p><a href="/peaks/<%= peak.id %>"><%= peak.id %>: </a><%= peak.name %><%= peak.elevation %><%= peak.date_hiked %><%= peak.remarks %></p>
+  <p><a href="/peaks/<%= peak.id %>"><%= peak.id %>: </a>
+  	<%= peak.name %><br>
+  	<%= peak.elevation %><br>
+  	<%= peak.date_hiked %><br>
+  	<%= peak.remarks %><br>
+  </p>
 <% end %>

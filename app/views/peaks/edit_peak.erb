@@ -1,0 +1,9 @@
+<h1>Edit Peak</h1>
+<form action="/peaks/<%= @peak.id %>" method="POST">
+	<input id="hidden" type="hidden" name="_method" value="patch">
+	<input type="text" name="name" value="<%= @peak.name %>">
+	<input type="text" name="elevation" value="<%= @peak.elevation %>">
+	<input type="text" name="date_hiked" value="<%= @peak.date_hiked %>">
+	<input type="text" name="remarks" value="<%= @peak.remarks %>">
+	<input type="submit" id="submit" name="submit" value="Update">
+</form>
