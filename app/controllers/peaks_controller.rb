@@ -30,6 +30,8 @@ class PeakController < ApplicationController
 		if logged_in?
 			@peak = Peak.find_by_id(params[:id])
 			erb :'peaks/show_peak'
+		else
+      		redirect to '/login'
 		end
 	end
 
