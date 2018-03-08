@@ -5,7 +5,7 @@ class PeakController < ApplicationController
 	      @peaks = Peak.all
 	      erb :'peaks/all_peaks'
 	    else
-	      redirect to '/login'
+	      redirect to "/login"
 	    end
 	end
 
@@ -14,7 +14,7 @@ class PeakController < ApplicationController
 			@peaks = Peak.all
       		erb :'/peaks/add_peak'
     	else
-      		redirect to '/login'
+      		redirect to "/login"
     	end
 	end
 
@@ -23,6 +23,7 @@ class PeakController < ApplicationController
 	      redirect to "/peaks/new"
 	    else
 	      @peaks = current_user.peaks.create(name: params[:name], elevation: params[:elevation], date_hiked: params[:date_hiked], remarks: params[:remarks])
+	      redirect to "/peaks/#{@peak.id}"
 	    end
 	end
 
@@ -31,7 +32,7 @@ class PeakController < ApplicationController
 			@peak = Peak.find_by_id(params[:id])
 			erb :'peaks/show_peak'
 		else
-      		redirect to '/login'
+      		redirect to "/login"
 		end
 	end
 
@@ -41,17 +42,17 @@ class PeakController < ApplicationController
 			if @peak.user_id == current_user.id
 				erb :'peaks/edit_peak'
 			else
-				redirect to '/all_peaks'
+				redirect to "/all_peaks"
 			end
 		else
-			redirect to '/login'
+			redirect to "/login"
 		end
 	end
 
 
-	patch 'peaks/:id' do
+	patch '/peaks/:id' do
 		if params[:name] == "" || params[:elevation] == "" || params[:date_hiked] == ""
-			redirect to 'peaks/#{params[:id]}/edit'
+			redirect to "/peaks/#{params[:id]}/edit"
 		else
 			@peak = Peak.find_by_id(params[:id])
 			@peak.name = params[:name]
@@ -59,7 +60,7 @@ class PeakController < ApplicationController
 			@peak.date_hiked = params[:date_hiked]
 			@peak.remarks = params[:remarks]
 			@peak.save
-			redirect to '/peaks/#{@peak.id}'
+			redirect to "/peaks/#{@peak.id}"
 		end
 	end
 
