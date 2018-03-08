@@ -5,6 +5,7 @@ class CreatePeaks < ActiveRecord::Migration
   		t.integer :elevation
   		t.date :date_hiked
   		t.string :remarks
+  		t.integer :user_id
   	end
   end
 end

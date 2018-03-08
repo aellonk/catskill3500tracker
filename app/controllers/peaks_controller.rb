@@ -17,4 +17,13 @@ class PeakController < ApplicationController
       		redirect to '/login'
     	end
 	end
+
+	post '/peaks' do
+	    if params[:name] == "" || params[:elevation] == "" || params[:date_hiked] == ""
+	      redirect to "/peaks/new"
+	    else
+	      @peaks = current_user.peaks.create(name: params[:name], elevation: params[:elevation], date_hiked: params[:date_hiked], remarks: params[:remarks])
+	      
+	    end
+	end
 end
