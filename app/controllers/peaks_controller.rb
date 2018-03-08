@@ -35,5 +35,19 @@ class PeakController < ApplicationController
 		end
 	end
 
+	patch 'peaks/:id' do
+		if params[:name] == "" || params[:elevation] == "" || params[:date_hiked] == ""
+			redirect to 'peaks/#{params[:id]}/edit'
+		else
+			@peak = Peak.find_by_id(params[:id])
+			@peak.name = params[:name]
+			@peak.elevation = params[:elevation]
+			@peak.date_hiked = params[:date_hiked]
+			@peak.remarks = params[:remarks]
+			@peak.save
+			redirect to '/peaks/#{@peak.id}'
+		end
+	end
+
 
 end
