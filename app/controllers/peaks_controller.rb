@@ -35,6 +35,20 @@ class PeakController < ApplicationController
 		end
 	end
 
+	get '/peaks/:id/edit' do
+		if logged_in?
+			@peak = Peak.find_by_id(params[:id])
+			if @peak.user_id == current_user.id
+				erb :'peaks/edit_peak'
+			else
+				redirect to '/all_peaks'
+			end
+		else
+			redirect to '/login'
+		end
+	end
+
+
 	patch 'peaks/:id' do
 		if params[:name] == "" || params[:elevation] == "" || params[:date_hiked] == ""
 			redirect to 'peaks/#{params[:id]}/edit'
