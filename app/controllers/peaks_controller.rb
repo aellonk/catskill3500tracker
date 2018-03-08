@@ -23,7 +23,15 @@ class PeakController < ApplicationController
 	      redirect to "/peaks/new"
 	    else
 	      @peaks = current_user.peaks.create(name: params[:name], elevation: params[:elevation], date_hiked: params[:date_hiked], remarks: params[:remarks])
-	      
 	    end
 	end
+
+	get '/peaks/:id' do
+		if logged_in?
+			@peak = Peak.find_by_id(params[:id])
+			erb :'peaks/show_peak'
+		end
+	end
+
+
 end
