@@ -1,5 +1,4 @@
 class PeakController < ApplicationController
-
 	get '/peaks' do
 		if logged_in?
 	      @peaks = Peak.all
