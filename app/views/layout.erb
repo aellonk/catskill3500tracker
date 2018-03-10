@@ -16,12 +16,11 @@
 <body>
   <div class="wrapper">
     <% if logged_in? %>
-        <a href="/peaks/new">Add a Peak</a>
-        <a href="/logout">Log Out</a>
-      </nav>
+        <h5>Signed in as: <a href="/users/<%= @current_user.username %>"><%= current_user.username %></a></h5>
+        <h5><a href='/logout'>Log Out</a></h5>
       <% else %>
-      <a href="/login"><button>Log In</button></a>
-      <a href="/signup">Sign up</a>
+      <h5><a href="/login">Log In</a></h5>
+      <h5><a href="/signup">Sign up</a></h5>
     <% end %>
       <%= yield %>
 
