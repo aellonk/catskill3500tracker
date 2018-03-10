@@ -64,5 +64,19 @@ class PeakController < ApplicationController
 		end
 	end
 
+	delete '/peaks/:id/delete' do
+		if logged_in?
+			@peak = Peak.find_by_id(params[:id])
+			if @peak.user_id == current_user.id
+				@peak.delete
+				redirect to '/all_peaks'
+			else
+				redirect to '/all_peaks'
+			end
+		else
+			redirect to 'login'
+		end
+	end
+
 
 end
