@@ -9,7 +9,7 @@ class UserController < ApplicationController
 	    if !logged_in?
 	      erb :'users/signup'
 	    else
-	      redirect to '/peaks'
+	      redirect to '/'
 	    end
   	end
 
@@ -18,9 +18,13 @@ class UserController < ApplicationController
 	      redirect to '/signup'
 	    else
 	    	@user = User.new(:username => params[:username], :email => params[:email], :password => params[:password])
+	    	if @user.valid?
 		    @user.save
 		    session[:user_id] = @user.id
-		    redirect to '/peaks'
+		    redirect to '/'
+			else
+				flash[:alert] = "Your username or email has been used."
+			end
 	    end
   	end
 
@@ -28,7 +32,7 @@ class UserController < ApplicationController
 		if !logged_in?
 	      erb :'users/login'
 		else
-		  redirect to '/peaks'
+		  redirect to '/'
 		end
   	end
 
@@ -36,7 +40,7 @@ class UserController < ApplicationController
 	    user = User.find_by(:username => params[:username])
 	    if user && user.authenticate(params[:password])
 	      session[:user_id] =  user.id
-	      redirect "/peaks"
+	      redirect "/"
 	    else
 	      redirect to '/signup'
 	    end
