@@ -1,8 +1,8 @@
-#Catskill 3500 Tracker
+# Catskill 3500 Tracker
 
 This is a Sinatra CRUD app for tracking progress of hikes to the NY Catskills' 35 peaks over 3500'.
 
-##Installation
+## Installation
 
 	Clone this repository 
 
@@ -19,7 +19,7 @@ This is a Sinatra CRUD app for tracking progress of hikes to the NY Catskills' 3
 
 	Then open page in browser according to web address displayed in terminal (ex. http://127.0.0.1:9393/)
 
-##Usage
+## Usage
 
 After you sign up, you can add, edit, delete, and view all of your peaks. 
 
