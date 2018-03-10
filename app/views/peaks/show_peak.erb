@@ -3,4 +3,8 @@
 <h2><%= @peak.date_hiked %></h2>
 <h2><%= @peak.remarks %></h2>
 <a href="/peaks/<%= @peak.id %>/edit">Edit Peak</a>
+<form action="/peaks/<%= @peak.id %>/delete" method="POST">
+	<input id="hidden" type="hidden" name="_method" value="DELETE">
+	<input type="submit" value="Delete Peak">
+</form>
 <a href="/peaks">All of Your Peaks</a>

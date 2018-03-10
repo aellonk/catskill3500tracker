@@ -42,7 +42,7 @@ class PeakController < ApplicationController
 			if @peak.user_id == current_user.id
 				erb :'peaks/edit_peak'
 			else
-				redirect to "/all_peaks"
+				redirect to "/peaks"
 			end
 		else
 			redirect to "/login"
@@ -69,9 +69,9 @@ class PeakController < ApplicationController
 			@peak = Peak.find_by_id(params[:id])
 			if @peak.user_id == current_user.id
 				@peak.delete
-				redirect to '/all_peaks'
+				redirect to '/peaks'
 			else
-				redirect to '/all_peaks'
+				redirect to '/peaks'
 			end
 		else
 			redirect to 'login'
