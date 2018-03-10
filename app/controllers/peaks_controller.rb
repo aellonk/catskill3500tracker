@@ -63,6 +63,7 @@ class PeakController < ApplicationController
 			@peak.date_hiked = params[:date_hiked]
 			@peak.remarks = params[:remarks]
 			@peak.save
+			flash[:alert] = "Your peak was successfully updated."
 			redirect to "/peaks/#{@peak.id}"
 		end
 	end
