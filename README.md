@@ -1,5 +1,5 @@
 <h2>Usage</h2>
-<ol>To use this app:
+<ol>
 	<li>Clone this repository</li> 
 	<li>Run bundle install</li>run bundle, then and then run shotgun.
 	<li>Run rake db:migrate</li>
