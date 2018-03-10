@@ -15,7 +15,14 @@
 </head>
 <body>
   <div class="wrapper">
-
+    <% if logged_in? %>
+        <a href="/peaks/new">Add a Peak</a>
+        <a href="/logout">Log Out</a>
+      </nav>
+      <% else %>
+      <a href="/login">Log In</a>
+      <a href="/signup">Sign up</a>
+    <% end %>
       <%= yield %>
 
     <footer class="branding">

@@ -1,0 +1,9 @@
+<h3><%= @user.username %> is quite the peakbagger!</h3>
+<br>
+<% @user.peaks.each do |peak| %>
+  <p><a href="/peaks/<%= peak.id %>"><%= peak.id %>
+  	<%= peak.name %><br>
+  	<%= peak.elevation %><br>
+  	<%= peak.date_hiked %><br>
+  	<%= peak.remarks %><br>
+<% end %>
