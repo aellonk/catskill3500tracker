@@ -14,6 +14,7 @@ class PeakController < ApplicationController
 			@peaks = Peak.all
       		erb :'/peaks/add_peak'
     	else
+    		flash[:alert] = "You must be logged in."
       		redirect to "/login"
     	end
 	end
@@ -32,6 +33,7 @@ class PeakController < ApplicationController
 			@peak = Peak.find_by_id(params[:id])
 			erb :'peaks/show_peak'
 		else
+			flash[:alert] = "You must be logged in."
       		redirect to "/login"
 		end
 	end
@@ -45,6 +47,7 @@ class PeakController < ApplicationController
 				redirect to "/peaks"
 			end
 		else
+			flash[:alert] = "You must be logged in."
 			redirect to "/login"
 		end
 	end
@@ -74,6 +77,7 @@ class PeakController < ApplicationController
 				redirect to '/peaks'
 			end
 		else
+			flash[:alert] = "You must be logged in."
 			redirect to 'login'
 		end
 	end
