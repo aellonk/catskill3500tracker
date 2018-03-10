@@ -5,6 +5,7 @@ class PeakController < ApplicationController
 	      @peaks = Peak.all
 	      erb :'peaks/all_peaks'
 	    else
+	      flash[:alert] = "You must be logged in."
 	      redirect to "/login"
 	    end
 	end
