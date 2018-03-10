@@ -4,18 +4,16 @@ This is a Sinatra CRUD app for tracking progress of hikes to the NY Catskills' 3
 
 ## Installation
 
-	Clone this repository 
+	Clone this repository and then execute:
 
-	And then execute:
-
-    $ bundle
+    	$ bundle
 
 	Then run:
 	
-	$ rake db:migrate
+		$ rake db:migrate
 	
 	And run:
-	$ shotgun 
+		$ shotgun 
 
 	Then open page in browser according to web address displayed in terminal (ex. http://127.0.0.1:9393/)
 
