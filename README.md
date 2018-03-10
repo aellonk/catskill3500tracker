@@ -4,15 +4,15 @@ This is a Sinatra CRUD app for tracking progress of hikes to the NY Catskills' 3
 
 ## Installation
 
-Clone this repository and then execute:
+1. Clone this repository and then execute:
 
     $ bundle
 
-Then run:
+2. Then run:
 	
 	$ rake db:migrate
 	
-And run:
+3. Then run:
 
 	$ shotgun 
 
