@@ -3,38 +3,77 @@
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-
-  <title>Catskill3500tracker</title>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <meta name="description" content="Progress Tracker for 3500 Club Aspirants">
+  <title>Catskill 3500 Progress Tracker</title>
+  <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="/stylesheets/main.css" />
 </head>
 <body>
   <% if flash.has?(:alert) %>
   <%= flash[:alert] %>
-<% end %>
-  <div class="wrapper">
-    <% if logged_in? %>
-        <h5>Signed in as: <a href="/users/<%= @current_user.username %>"><%= current_user.username %></a></h5>
-        <h5><a href='/logout'>Log Out</a></h5>
-      <% else %>
-      <h5><a href="/login">Log In</a></h5>
-      <h5><a href="/signup">Sign up</a></h5>
-    <% end %>
+   <% end %>
+
+  <div class="jumbotron">
+    <div class="container">
+        <video id="video-background" preload muted autoplay loop>
+          <source src="images/video.mp4" type="video/mp4"/>
+        </video>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+              <a class="navbar-brand" href="index.html">
+                <img class="logo" src="" Alt="logo image">
+              </a>
+          
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="navbar-right nav navbar-nav">
+            <% if logged_in? %>
+              <h5>Signed in as: <a href="/users/<%= @current_user.username %>"><%= current_user.username %></a></h5>
+              <li><a href='/logout'>Log Out</a></li>
+          <% else %>
+              <li><a href="/login">Log In</a></li>
+              <li><a href="/signup">Sign up</a></li>
+          <% end %>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+      <h1>Catskill 3500 Tracker
+        <br>
+        <i class="fa fa-long-arrow-down" aria-hidden="true"></i>
+       </h1>
+</div>
+  </div>
+ <div class="wrapper">
+  
       <%= yield %>
 
     <footer class="branding">
-      <small>&copy; 2018 <strong>Catskill3500tracker</strong></small>
+      <small>&copy; 2018 <strong>Catskill 3500 Tracker</strong></small>
     </footer>
-  </div>
+  </div> <!-- end wrapper -->
 
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script src="https://use.fontawesome.com/235ff2ab54.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <!--[if lt IE 7]>
     <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
     <script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
   <![endif]-->
 </body>
+</html>
