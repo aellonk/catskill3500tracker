@@ -26,6 +26,8 @@
     width: 85%;
   }*/
 
+
+
   h1 {
     font-size: 36px;
     line-height: 54px;
@@ -152,16 +154,31 @@ i {
   padding-top: 20px;
 }
 
+.image {
+  max-width: 100%;
+}
+
 .padding {
   padding-left: 7em;
   padding-right: 7em;
   padding-top: 8em;
 }
 
+.photo {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .container {
   margin-left: 0;
   margin-right: 0;
   width: 100%;
+}
+
+.placement {
+  padding-top: 5%;
+  height: 50vh;
+  margin-left: 8%;
 }
 
 .btn-form {
