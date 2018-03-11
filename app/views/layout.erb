@@ -22,24 +22,7 @@
 
   <div class="jumbotron">
     <div class="container">
-        <video id="video-background" preload muted autoplay loop>
-          <source src="images/video.mp4" type="video/mp4"/>
-        </video>
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            </button>
-              <a class="navbar-brand" href="index.html">
-                <img class="logo" src="" Alt="logo image">
-              </a>
-          
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
+  <div id="navbar" class="navbar-collapse collapse">
           <ul class="navbar-right nav navbar-nav">
             <% if logged_in? %>
               <h5>Signed in as: <a href="/users/<%= @current_user.username %>"><%= current_user.username %></a></h5>
@@ -51,17 +34,12 @@
             <li><a href="#about">About</a></li>
           </ul>
         </div>
-      </div>
-    </nav>
-      <h1>Catskill 3500 Tracker
-        <br>
-        <i class="fa fa-long-arrow-down" aria-hidden="true"></i>
-       </h1>
-</div>
+              <%= yield %>
+        </div>
   </div>
  <div class="wrapper">
   
-      <%= yield %>
+
 
     <footer class="branding">
       <small>&copy; 2018 <strong>Catskill 3500 Tracker</strong></small>
