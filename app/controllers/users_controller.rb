@@ -22,8 +22,9 @@ class UserController < ApplicationController
 		    @user.save
 		    session[:user_id] = @user.id
 		    redirect to '/'
-			else
-				flash[:alert] = "Your username or email has been used."
+			elsif !@user.valid?
+				flash[:alert] = "Invalid Email Address and/or Username."
+				redirect to '/signup'
 			end
 	    end
   	end
