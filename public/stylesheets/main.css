@@ -41,7 +41,8 @@
 
   h3 {
     font-size: 18px;
-    line-height: 36px;
+    margin-top: 0px;
+    margin-bottom: 20px;
   }
 
   p {
@@ -124,9 +125,7 @@
     margin: 3em;
 }
 
-h3 {
-  margin-bottom: 20px;
-}
+
 
 h4 {
   color: #15523e;
