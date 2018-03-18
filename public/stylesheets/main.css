@@ -106,6 +106,12 @@
     color: #000;
 }
 
+.navbar-inverse .navbar-brand:hover, 
+.navbar-inverse .navbar-brand:focus {
+  background-color: transparent;
+  color: #000;
+}
+
 .jumbotron{
   position: relative;
   background-color: transparent;
