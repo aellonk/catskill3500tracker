@@ -231,9 +231,17 @@ ul li a:hover {
   background-color: #15523e;
 }
 
+.btn-primary {
+    color: #fff;
+    background-color: #15523e;
+    border-color: #15523e;
+}
 
-
-
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #15523e;
+    background-color: #fff;
+    border-color: #15523e;
+}
 
 
 
