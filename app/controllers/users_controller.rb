@@ -21,7 +21,7 @@ class UserController < ApplicationController
 	    	if @user.valid?
 		    @user.save
 		    session[:user_id] = @user.id
-		    redirect to '/'
+		    redirect to '/peaks'
 			elsif !@user.valid?
 				flash[:alert] = "Invalid Email Address and/or Username."
 				redirect to '/signup'
@@ -41,7 +41,7 @@ class UserController < ApplicationController
 	    user = User.find_by(:username => params[:username])
 	    if user && user.authenticate(params[:password])
 	      session[:user_id] =  user.id
-	      redirect "/"
+	      redirect "/peaks"
 	    else
 	      redirect to '/signup'
 	    end
