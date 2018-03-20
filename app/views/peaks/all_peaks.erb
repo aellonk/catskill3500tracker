@@ -1,16 +1,24 @@
-
 <h1>All Peaks</h1>
-<% @peaks.each do |peak| %>
-  <h4><a href="/peaks/<%= peak.id %>"><%= peak.id %></a>
-  	<%= peak.name %><br>
-  	<%= peak.elevation %><br>
-  	<%= peak.date_hiked %><br>
-  	<%= peak.remarks %><br>
-  	<a href="/peaks/<%= peak.id %>/edit">Edit peak</a>
-  	<form action="/peaks/<%= peak.id %>/delete" method="POST">
-	<input id="hidden" type="hidden" name="_method" value="DELETE">
-	<input type="submit" value="Delete Peak">
-	</form>
-  </h4>
-  <br>
-<% end %>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Peak Name</th>
+      <th scope="col">Elevation</th>
+      <th scope="col">Date Hiked</th>
+      <th scope="col">Remarks</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <% @peaks.each do |peak| %>
+    <tr>
+      <th scope="row"><a href="/peaks/<%= peak.id %>"><%= peak.name %></a></th>
+      <td><%= peak.elevation %>'</td>
+      <td><%= peak.date_hiked %></td>
+      <td><%= peak.remarks %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
