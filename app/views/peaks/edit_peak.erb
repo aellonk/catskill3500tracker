@@ -1,9 +1,49 @@
-<h1>Edit Peak</h1>
+<h1>Edit Peak: <%= @peak.name %></h1>
 <form action="/peaks/<%= @peak.id %>" method="POST">
 	<input id="hidden" type="hidden" name="_method" value="patch">
-	<input type="text" name="name" value="<%= @peak.name %>" autofocus>
-	<input type="text" name="elevation" value="<%= @peak.elevation %>">
-	<input type="text" name="date_hiked" value="<%= @peak.date_hiked %>">
-	<input type="text" name="remarks" value="<%= @peak.remarks %>">
-	<input type="submit" id="submit" name="submit" value="Update">
+	<label>Peak Name</label>
+	<select name="name">
+		<option value="" selected disabled hidden>Choose here</option>
+		<option value="Balsam">Balsam</option>
+		<option value="Balsam Cap">Balsam Cap</option>
+		<option value="Balsam Lake">Balsam Lake</option>
+		<option value="Bearpen">Bearpen</option>
+		<option value="Big Indian">Big Indian</option>
+		<option value="Black Dome">Black Dome</option>
+		<option value="Blackhead">Blackhead</option>
+		<option value="Cornell">Cornell</option>
+		<option value="Doubletop">Doubletop</option>
+		<option value="Eagle">Eagle</option>
+		<option value="Fir">Fir</option>
+		<option value="Friday">Friday</option>
+		<option value="Graham">Graham</option>
+		<option value="Halcott">Halcott</option>
+		<option value="Hunter">Hunter</option>
+		<option value="Indian Head">Indian Head</option>
+		<option value="Kaaterskill High Peak">Kaaterskill High Peak</option>
+		<option value="Lone">Lone</option>
+		<option value="North Dome">North Dome</option>
+		<option value="Panther">Panther</option>
+		<option value="Peekamoose">Peekamoose</option>
+		<option value="Plateau">Plateau</option>
+		<option value="Rocky">Rocky</option>
+		<option value="Rusk">Rusk</option>
+		<option value="Southwest Hunter">Southwest Hunter</option>
+		<option value="Sherrill">Sherrill</option>
+		<option value="Slide">Slide</option>
+		<option value="Sugarloaf">Sugarloaf</option>
+		<option value="Table">Table</option>
+		<option value="Thomas Cole">Thomas Cole</option>
+		<option value="Twin">Twin</option>
+		<option value="Vly">Vly</option>
+		<option value="Westkill">Westkill</option>
+		<option value="Windham High Peak">Windham High Peak</option>
+		<option value="Wittenberg">Wittenberg</option>
+	</select>
+	<br>
+	<label>Date Hiked</label>
+	<input id='date_hiked' type='text' name='date_hiked' placeholder='mm/dd/yyyy'  value="<%= @peak.date_hiked %>" required><br>
+	<label>Remarks: </label>
+	<input id='remarks' type='text' name='remarks' value="<%= @peak.remarks %>"><br>
+	<input class="btn btn-primary" type='submit' value='Update'>
 </form>

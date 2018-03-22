@@ -12,7 +12,7 @@
   <tbody>
     <% @peaks.each do |peak| %>
     <tr>
-      <th scope="row"><%= peak.name %></th>
+      <th scope="row"><a href="/peaks/<%= peak.id %>"><%= peak.name %></a></th>
       <td><%= peak.elevation %>'</td>
       <td><%= peak.date_hiked %></td>
       <td><%= peak.remarks %></td>
