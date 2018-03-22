@@ -1,10 +1,10 @@
-<h1><%= @peak.name %></h1>
-<h2><%= @peak.elevation %></h2>
-<h2><%= @peak.date_hiked %></h2>
-<h2><%= @peak.remarks %></h2>
-<a href="/peaks/<%= @peak.id %>/edit">Edit Peak</a>
+<h2>Name: <%= @peak.name %></h2>
+<h2>Elevation: <%= @peak.elevation %>'</h2>
+<h2>Date Hiked: <%= @peak.date_hiked %></h2>
+<h2>Remarks: <%= @peak.remarks %></h2>
+<button><a href="/peaks/<%= @peak.id %>/edit">Edit Peak</a></button>
 <form action="/peaks/<%= @peak.id %>/delete" method="POST">
 	<input id="hidden" type="hidden" name="_method" value="DELETE">
 	<input type="submit" value="Delete Peak">
 </form>
-<a href="/peaks">Back to Your Peaks</a>
+<button><a href="/peaks">Back to Your Peaks</a></button>
