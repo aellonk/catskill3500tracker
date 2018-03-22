@@ -41,6 +41,7 @@
           <ul class="navbar-right nav navbar-nav">
             <% if logged_in? %>
               <h5>Signed in as: <a href="/users/<%= @current_user.username %>"><%= current_user.username %></a></h5>
+              <li><a href="/peaks">Your Peaks</a></li>
               <li><a href="logout">Log Out</a></li>
           <% else %>
               <li><a href="/login">Log In</a></li>
