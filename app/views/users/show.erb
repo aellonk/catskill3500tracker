@@ -1,9 +1,26 @@
 <h3><%= @user.username %> is quite the peakbagger!</h3>
 <br>
-<% @user.peaks.each do |peak| %>
-  <p><a href="/peaks/<%= peak.id %>"><%= peak.id %>
-  	<%= peak.name %><br>
-  	<%= peak.elevation %><br>
-  	<%= peak.date_hiked %><br>
-  	<%= peak.remarks %><br>
-<% end %>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Peak Name</th>
+      <th scope="col">Elevation</th>
+      <th scope="col">Date Hiked</th>
+      <th scope="col">Remarks</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <% @user.peaks.each do |peak| %>
+    <tr>
+      <th scope="row"><%= peak.name %></th>
+      <td><%= peak.elevation %>'</td>
+      <td><%= peak.date_hiked %></td>
+      <td><%= peak.remarks %></td>
+      <td><a href="/peaks/<%= peak.id %>/edit">Edit</a></td>
+      <td><a href="/peaks/<%= peak.id %>/delete">Delete</a></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
