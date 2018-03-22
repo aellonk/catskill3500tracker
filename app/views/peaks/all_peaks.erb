@@ -1,6 +1,5 @@
-<h1>All Peaks</h1>
-<a href="/peaks/new"><h1>Add a Peak</h1></a>
-<table class="table">
+<h1>Your Peaks</h1>
+<table class="table table-hover">
   <thead>
     <tr>
       <th scope="col">Peak Name</th>
@@ -13,13 +12,15 @@
   <tbody>
     <% @peaks.each do |peak| %>
     <tr>
-      <th scope="row"><a href="/peaks/<%= peak.id %>"><%= peak.name %></a></th>
+      <th scope="row"><%= peak.name %></th>
       <td><%= peak.elevation %>'</td>
       <td><%= peak.date_hiked %></td>
       <td><%= peak.remarks %></td>
+      <td><a href="/peaks/<%= peak.id %>/edit">Edit</a></td>
+      <td><a href="/peaks/<%= peak.id %>/delete">Delete</a></td>
     </tr>
     <% end %>
   </tbody>
 </table>
-
+<a href="/peaks/new"><h1>Add a Peak</h1></a>
 
