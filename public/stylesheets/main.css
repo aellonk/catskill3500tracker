@@ -19,12 +19,11 @@
     overflow-x: hidden; 
   }
 
-/*  .wrapper {
+.wrapper {
     margin: 16px auto;
     max-width: 960px;
     padding: 2.25%; 
-    width: 85%;
-  }*/
+  }
 
 
 
@@ -281,4 +280,9 @@ ul li a:hover {
     font-size: 18px;
     line-height: 24px;
   }
+}
+
+@media (min-width: 768px) {
+.navbar-right {
+    margin-right: 0px;
 }
