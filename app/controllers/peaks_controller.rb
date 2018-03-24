@@ -117,6 +117,7 @@ class PeakController < ApplicationController
 			if @peak.user_id == current_user.id
 				erb :'peaks/edit_peak'
 			else
+				flash[:alert] = "You must be the owner of the peak to edit."
 				redirect to "/peaks"
 			end
 		else
