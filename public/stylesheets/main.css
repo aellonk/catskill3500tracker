@@ -77,7 +77,7 @@
   footer.branding {
     margin-top: 20px;
     padding-top: 20px;
-    bottom: 0;
+    position: absolute;
   }
 }
 
@@ -201,12 +201,6 @@ i {
     float: right;
      bottom: 1em;
     height: 63px;
-}
-
-.footer {
-  color: #ffffff;
-  height: 250px;
-  background-color: #132a31;
 }
 
 h5 {
