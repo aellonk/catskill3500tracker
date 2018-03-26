@@ -14,20 +14,15 @@ class UserController < ApplicationController
   	end
 
   	post '/signup' do
-	  	if params[:username] == "" || params[:email] == "" || params[:password] == ""
-	  		flash[:alert] = "Fill in all fields."
-	      redirect to '/signup'
-	    else
-	    	@user = User.new(:username => params[:username], :email => params[:email], :password => params[:password])
+	  	@user = User.new(:username => params[:username], :email => params[:email], :password => params[:password])
 	    	if @user.valid?
 		    @user.save
 		    session[:user_id] = @user.id
 		    redirect to '/peaks'
 			elsif !@user.valid?
-				flash[:alert] = "Invalid Email Address and/or Username."
-				redirect to '/signup'
+				flash[:alert] = "Email Address and/or Username Already Taken."
+				erb :'users/signup'
 			end
-	    end
   	end
 
   	get '/login' do
