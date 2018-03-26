@@ -1,0 +1,41 @@
+peak_list = [
+  [ "Balsam", 3600 ],
+  [ "Balsam Cap", 3623 ],
+  [ "Balsam Lake", 3723 ],
+  [ "Bearpen", 3600 ],
+  [ "Big Indian", 3700 ],
+  [ "Black Dome", 3980 ],
+  [ "Blackhead", 3940 ],
+  [ "Cornell", 3860 ],
+  [ "Doubletop", 3860 ],
+  [ "Eagle", 3600 ],
+  [ "Fir", 3620 ],
+  [ "Friday", 3694 ],
+  [ "Graham", 3868 ],
+  [ "Halcott", 3537 ],
+  [ "Hunter", 4040 ],
+  [ "Indian Head", 3573 ],
+  [ "Kaaterskill High Peak", 3655 ],
+  [ "Lone", 3721 ],
+  [ "North Dome", 3610 ],
+  [ "Panther", 3720 ],
+  [ "Peekamoose", 3843 ],
+  [ "Plateau", 3840 ],
+  [ "Rocky", 3508 ],
+  [ "Rusk", 3680 ],
+  [ "Southwest Hunter", 3740 ],
+  [ "Sherrill", 3540 ],
+  [ "Slide", 4180 ],
+  [ "Sugarloaf", 3880 ],
+  [ "Table", 3847 ],
+  [ "Thomas Cole", 3940 ],
+  [ "Twin", 3640 ],
+  [ "Vly", 3529 ],
+  [ "Westkill", 3880 ],
+  [ "Windham High Peak", 3524 ],
+  [ "Wittenberg", 3780 ]
+]
+
+peak_list.each do |name, elevation|
+  Peak.create( name: name, elevation: elevation )
+end
