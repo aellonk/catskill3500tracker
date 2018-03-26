@@ -15,6 +15,7 @@ class UserController < ApplicationController
 
   	post '/signup' do
 	  	if params[:username] == "" || params[:email] == "" || params[:password] == ""
+	  		flash[:alert] = "Fill in all fields."
 	      redirect to '/signup'
 	    else
 	    	@user = User.new(:username => params[:username], :email => params[:email], :password => params[:password])
@@ -41,9 +42,10 @@ class UserController < ApplicationController
 	    user = User.find_by(:username => params[:username])
 	    if user && user.authenticate(params[:password])
 	      session[:user_id] =  user.id
-	      redirect "/peaks"
+	      redirect to "/peaks"
 	    else
-	      redirect to '/signup'
+	      flash[:alert] = "Wrong username and/or password."
+	      erb :'users/login'
 	    end
   	end
 
