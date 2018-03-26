@@ -1,10 +1,29 @@
-<h2>Name: <%= @peak.name %></h2>
-<h2>Elevation: <%= @peak.elevation %>'</h2>
-<h2>Date Hiked: <%= @peak.date_hiked %></h2>
-<h2>Remarks: <%= @peak.remarks %></h2>
-<button><a href="/peaks/<%= @peak.id %>/edit">Edit Peak</a></button>
-<form action="/peaks/<%= @peak.id %>/delete" method="POST">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Peak Name</th>
+      <th scope="col">Elevation</th>
+      <th scope="col">Date Hiked</th>
+      <th scope="col">Remarks</th>
+
+    </tr>
+  </thead>
+  <tbody>
+   
+    <tr>
+      <th scope="row"><h3><%= @peak.name %></h3></th>
+      <td><h3><%= @peak.elevation %>'</h3></td>
+      <td><h3><%= @peak.date_hiked %></h3></td>
+      <td><h3><%= @peak.remarks %></h3></td>
+      <td><h3><button><a href="/peaks/<%= @peak.id %>/edit">Edit Peak</a></button></h3></td>
+      <td><h3><form action="/peaks/<%= @peak.id %>/delete" method="POST">
 	<input id="hidden" type="hidden" name="_method" value="DELETE">
 	<input type="submit" value="Delete Peak">
-</form>
+</form></h3></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
 <button><a href="/peaks">Back to Your Peaks</a></button>
