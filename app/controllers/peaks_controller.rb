@@ -20,14 +20,10 @@ class PeakController < ApplicationController
 	end
 
 	post '/peaks' do
-	    if params[:name] == "" || params[:elevation] == "" || params[:date_hiked] == ""
-	      redirect to "/peaks/new"
-	    else
 	    	peak = Peak.find_by(name: params[:name])
 	    	params[:elevation] = peak.elevation
 	      @peak = current_user.peaks.create(name: params[:name], elevation: params[:elevation], date_hiked: params[:date_hiked], remarks: params[:remarks])
 	      redirect to "/peaks/#{@peak.id}"
-	    end
 	end
 
 	get '/peaks/:id' do
