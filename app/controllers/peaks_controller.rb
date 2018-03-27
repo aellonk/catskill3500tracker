@@ -2,6 +2,7 @@ class PeakController < ApplicationController
 	get '/peaks' do
 		if logged_in?
 	      @peaks = current_user.peaks
+	      @users = User.all
 	      erb :'peaks/all_peaks'
 	    else
 	      flash[:alert] = "You must be logged in."

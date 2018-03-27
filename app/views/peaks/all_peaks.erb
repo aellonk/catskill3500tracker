@@ -2,6 +2,7 @@
 <table class="table table-hover">
   <thead>
     <tr>
+      <th scope="col">Count</th>
       <th scope="col">Peak Name</th>
       <th scope="col">Elevation</th>
       <th scope="col">Date Hiked</th>
@@ -10,9 +11,10 @@
     </tr>
   </thead>
   <tbody>
-    <% @peaks.each do |peak| %>
+    <% @peaks.each.with_index(1) do |peak, index| %>
     <tr>
-      <th scope="row"><a href="/peaks/<%= peak.id %>"><%= peak.name %></a></th>
+      <td><%= index %></td>
+      <td scope="row"><a href="/peaks/<%= peak.id %>"><%= peak.name %></a></td>
       <td><%= peak.elevation %>'</td>
       <td><%= peak.date_hiked %></td>
       <td><%= peak.remarks %></td>
@@ -22,3 +24,4 @@
   </tbody>
 </table>
 <a href="/peaks/new"><h1>Add a Peak</h1></a>
+

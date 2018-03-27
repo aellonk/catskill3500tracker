@@ -46,4 +46,5 @@
 	<label>Remarks: </label>
 	<input id='remarks' type='text' name='remarks' value="<%= @peak.remarks %>"><br>
 	<input class="btn btn-primary" type='submit' value='Update'>
+	<a href="/peaks/<%= @peak.id %>"><button type="button" class="btn btn-secondary">Cancel</button></a>
 </form>
