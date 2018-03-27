@@ -19,6 +19,17 @@
     overflow-x: hidden; 
   }
 
+  .footer {
+    height: inherit;
+    width: inherit;
+    position: relative;
+  }
+
+  #copyright {
+    position: absolute;
+    bottom: -10em;
+  }
+
 .wrapper {
     margin: 16px auto;
     max-width: 960px;
