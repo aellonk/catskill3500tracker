@@ -13,6 +13,7 @@ class PeakController < ApplicationController
 	get '/peaks/new' do
 		if logged_in?
 			@peaks = current_user.peaks
+			@all_peaks = Peak.all
       		erb :'/peaks/add_peak'
     	else
     		flash[:alert] = "You must be logged in."
@@ -40,6 +41,7 @@ class PeakController < ApplicationController
 	get '/peaks/:id/edit' do
 		if logged_in?
 			@peak = Peak.find_by_id(params[:id])
+			@all_peaks = Peak.all
 			if @peak.user_id == current_user.id
 				erb :'peaks/edit_peak'
 			else
